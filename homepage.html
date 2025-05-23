@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name – Cryptography Engineer</title>
+  <meta name="description" content="Minimalist portfolio of a cryptography engineer.">
+  <style>
+    :root {
+      --bg-light: #ffffff;
+      --fg-light: #111111;
+      --bg-dark: #111111;
+      --fg-dark: #f0f0f0;
+      --accent: #0070f3;
+      --max-width: 40rem;
+      --spacing: 1rem;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--bg-light);
+      color: var(--fg-light);
+      line-height: 1.5;
+      padding: var(--spacing);
+      display: flex;
+      justify-content: center;
+    }
+    [data-theme="dark"] body {
+      background-color: var(--bg-dark);
+      color: var(--fg-dark);
+    }
+    .container {
+      max-width: var(--max-width);
+      width: 100%;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: calc(var(--spacing) * 2);
+    }
+    nav a {
+      margin-left: var(--spacing);
+      text-decoration: none;
+      color: inherit;
+      font-weight: 500;
+    }
+    h1 {
+      font-size: 2.5rem;
+    }
+    section {
+      margin: calc(var(--spacing) * 2) 0;
+    }
+    a.accent {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .toggle {
+      cursor: pointer;
+      font-size: 1.2rem;
+      background: none;
+      border: none;
+    }
+    ul { list-style: none; }
+    ul li + li { margin-top: 0.5rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Your Name</h1>
+      <div>
+        <button class="toggle" aria-label="Toggle dark mode">🌓</button>
+        <nav>
+          <a href="#about">About</a>
+          <a href="#writings">Writings</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <section id="about">
+      <p>I’m a cryptography engineer specializing in zero-knowledge proofs, elliptic curve optimizations, and secure protocol design. I build and audit high-performance C, Rust, and WebAssembly libraries for blockchain and privacy applications.</p>
+    </section>
+    <section id="writings">
+      <h2>Writings</h2>
+      <ul>
+        <li><a class="accent" href="#">A Walkthrough of KZG Commitments</a></li>
+        <li><a class="accent" href="#">Optimizing Multi-Scalar Multiplication on GPUs</a></li>
+        <li><a class="accent" href="#">Post-Quantum Cryptography: What’s Next?</a></li>
+      </ul>
+    </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>
+        <a class="accent" href="mailto:you@domain.com">you@domain.com</a>
+      </p>
+    </section>
+  </div>
+  <script>
+    const btn = document.querySelector('.toggle');
+    btn.addEventListener('click', () => {
+      const html = document.documentElement;
+      const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      html.setAttribute('data-theme', next);
+    });
+  </script>
+</body>
+</html>
